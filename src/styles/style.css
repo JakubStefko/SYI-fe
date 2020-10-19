@@ -4,11 +4,17 @@
 }
 
 :root {
-  --primary: aqua;
-  --secondary: blue;
+  --primary: #47E489;
+  --secondary: #09A74B;
   --background: white;
+  --link: #069BBC;
+  --link-hover: #F07D3C;
   --title: rgb(22, 22, 22);
   --font: rgb(112, 111, 111);
+  --error: #EB5757;
+  --map-header-background: rgba(0, 0, 0, 0.5);
+  --map-header-link-hover: yellow;
+  --disabled: rgb(73, 73, 73);
 }
 
 #root, body {
@@ -28,7 +34,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--secondary)
+  background: var(--primary)
 }
 
 h1, h2, h3 {
@@ -41,9 +47,85 @@ header {
 }
 
 a {
-  color: var(--secondary);
+  color: var(--link);
 }
 
 a:hover {
-  color: var(--primary);
+  color: var(--link-hover);
+}
+
+.input-container {
+  margin: 0.6em 0;
+  width: 80%
+}
+
+.input-container > input {
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4em;
+  margin: 0.2em 0 0 0;
+}
+
+.right {
+  width: 100%;
+  text-align: right;
+}
+
+.error {
+  color: var(--error);
+}
+
+.input-error {
+  background-color: var(--error);
+}
+
+.middle {
+  width: 100%;
+  text-align: center;
+}
+
+.disabled,
+.disabled *,
+.disabled *:hover {
+  fill: var(--disabled) !important;
+  color: var(--disabled) !important;
+  cursor: default !important;
+}
+
+.disabled a {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+.field-map-image {
+  width: 100%;
+  height: 80%;
+  min-height: 30rem;
+  margin-left: 3rem;
+}
+
+.field-map-image .leaflet-control-attribution {
+  display: none;
+}
+
+.input {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--map-header-background);
+  border-radius: 0.5rem;
+  background-color: var(--background);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 0.25rem;
+  border: 1px solid var(--map-header-background);
+  border-radius: 0.5rem;
+  padding: 0.4rem 2rem 0.4rem 0.5rem !important;
 }
